@@ -38,6 +38,11 @@ route::get('/',function(){
     return view('welcome');
 });
 
+route::post('time',function(){
+    return "ĐĂNG KÍ THÀNH CÔNG";
+    
+});
+
 Route::resource('/sinhvien', sinhviencontroller::class);
 
 // Route::match(['get', 'post'], 'tien2', function () {
