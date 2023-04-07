@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use app\Models\Sinhvien;
 
-class Sinhviencontroller extends Controller
+use Illuminate\Http\Request;
+use App\Models\Sinhvien;
+
+class SinhvienController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $sinhvien = Sinhvien::paginate(5);
@@ -19,14 +16,10 @@ class Sinhviencontroller extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -37,7 +30,8 @@ class Sinhviencontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Sinhvien::create($request->all());
+        return redirect()->route('sinhvien.index')->with('thongbao','追加しました!');
     }
 
     /**

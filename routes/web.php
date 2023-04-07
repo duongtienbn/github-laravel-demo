@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\studentcontroller;
-use app\Http\Controllers\Sinhviencontroller;
+use App\Http\Controllers\SinhvienController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,16 +34,16 @@ use app\Http\Controllers\Sinhviencontroller;
 // route::put('tien',function(){
 //     return "pt put cua path";
 // });
-route::get('/',function(){
-    return view('welcome');
-});
+// route::get('/',function(){
+//     return view('welcome');
+// });
 
-route::post('time',function(){
-    return "ĐĂNG KÍ THÀNH CÔNG";
+// route::post('time',function(){
+//     return "ĐĂNG KÍ THÀNH CÔNG";
     
-});
+// });
 
-Route::resource('/sinhvien', sinhviencontroller::class);
+Route::resource('/sinhvien', SinhvienController::class);
 
 // Route::match(['get', 'post'], 'tien2', function () {
 //     return $_SERVER['REQUEST_METHOD'];
